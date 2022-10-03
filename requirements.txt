@@ -1,4 +1,11 @@
 asgiref==3.5.2
 backports.zoneinfo==0.2.1
+beautifulsoup4==4.11.1
+behave==1.2.6
+behave-django==1.4.0
 Django==4.1.1
+parse==1.19.0
+parse-type==0.6.0
+six==1.16.0
+soupsieve==2.3.2.post1
 sqlparse==0.4.3
