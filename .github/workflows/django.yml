@@ -1,16 +1,12 @@
 name: Django CI
 
+env:
+  project_name: fileslist
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  workflow_call:
-    inputs:
-      project_name:
-        default: 'fileslist'
-        required: false
-        type: string
 
 jobs:
   build:
@@ -33,14 +29,14 @@ jobs:
         pip install -r requirements.txt
     - name: Run Django Tests
       run: |
-        python ${{ inputs.project_name }}/manage.py test
+        python ${{ project_name }}/manage.py test
     - name: Run Features Tests
       run: |
-        python ${{ inputs.project_name }}/manage.py behave ${{ inputs.project_name }}/features --junit --junit-directory ${{ inputs.project_name }}/features/report
+        python ${{ project_name }}/manage.py behave ${{ project_name }}/features --junit --junit-directory ${{ inputs.project_name }}/features/report
 
     - name: JUnit Report Action
       uses: mikepenz/action-junit-report@v3.5.0
       if: always() # always run even if the previous step fails
       with:
-        report_paths: '${{ inputs.project_name }}/features/report/TESTS-*.xml'
+        report_paths: '${{ project_name }}/features/report/TESTS-*.xml'
         include_passed: true
