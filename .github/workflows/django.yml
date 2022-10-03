@@ -1,0 +1,46 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_call:
+    inputs:
+      project_name:
+        default: 'fileslist'
+        required: false
+        type: string
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8.10]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Django Tests
+      run: |
+        python ${{ inputs.project_name }}/manage.py test
+    - name: Run Features Tests
+      run: |
+        python ${{ inputs.project_name }}/manage.py behave ${{ inputs.project_name }}/features --junit --junit-directory ${{ inputs.project_name }}/features/report
+
+    - name: JUnit Report Action
+      uses: mikepenz/action-junit-report@v3.5.0
+      if: always() # always run even if the previous step fails
+      with:
+        report_paths: '${{ inputs.project_name }}/features/report/TESTS-*.xml'
+        include_passed: true
