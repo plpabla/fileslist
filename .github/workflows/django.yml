@@ -1,7 +1,6 @@
 name: Django CI
+project_name: fileslist
 
-env:
-  project_name: fileslist
 on:
   push:
     branches: [ "master" ]
