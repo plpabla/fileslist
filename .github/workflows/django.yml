@@ -33,7 +33,7 @@ jobs:
         python ${{ env.project_name }}/manage.py test
     - name: Run Features Tests
       run: |
-        python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ inputs.project_name }}/features/report
+        python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ env.project_name }}/features/report
 
     - name: JUnit Report Action
       uses: mikepenz/action-junit-report@v3.5.0
