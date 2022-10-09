@@ -8,12 +8,29 @@ Create a web app (Django based) to which you can add files location with extra i
 
 
 ## Basic functionality 
+
+### Documents
+- [ ] As a logged user I want to create a new document entry
+- [ ] As a logged user I want to edit existing document
+- [ ] As a logged user I want to update a document (add next revision to existing one)
+- [ ] As a logged user I want to see by default only latest revisions
+- [ ] As a logged user I can see document revision history
+- [ ] As a logged user I want to filter specific document type
+- [ ] As a logged user I want to filter specific tags
+
+### Lists
 - [ ] As a logged user I want to see my lists
 - [ ] As a logged user I want to see documents on the list I have access
-- [ ] As a logged user I want to add a new document in the list
-- [ ] As a logged user I want to update a document (next revision)
-- [ ] As a logged user I want to see only latest revisions, but have access to older ones
-- [ ] As a logged user I want to filter specific document type
+- [ ] As a logged user I want to add a new document into the list
+- [ ] As a logged user I want to add an existing document into the list
+
+### Exporting
+- [ ] As a logged user I want to export given list to csv format
+- [ ] As a logged user I can define to export only latest revisions
+- [ ] As a logged user I can define to export all revisions
+- [ ] As a logged user I can define to export only documents with given doc. type
+- [ ] As a logged user I can define to export only documents with given doc. types (multiple selection)
+- [ ] As a logged user I can define to export only documents with given tags (multiple selection)
 
 ## "Document" fields
 - Name / description
