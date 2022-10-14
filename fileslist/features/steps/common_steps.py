@@ -1,6 +1,5 @@
 import time
 from behave import step
-from selenium import webdriver
 from django.urls import reverse
 
 def resolve_url(url, root=None):
@@ -12,10 +11,7 @@ def resolve_url(url, root=None):
 
 @step("opened browser")
 def my_step(context):
-    opts = webdriver.FirefoxOptions()
-    # opts.add_argument("--headless")
-    context.browser = webdriver.Firefox(options=opts)
-    # context.browser.implicitly_wait(3)
+    pass
     
 @step("I'm on the '{url}' page")
 def my_step(context, url):
@@ -24,4 +20,4 @@ def my_step(context, url):
 @step("Page title contains '{expected_title}'")
 def my_step(context, expected_title):
     assert False, "ToDo!"
-    context.browser.quit()
+

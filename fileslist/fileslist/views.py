@@ -2,4 +2,6 @@ from django.http import HttpRequest, HttpResponse
 
 
 def home(request: HttpRequest) -> HttpResponse:
-    return HttpResponse()
+    res = HttpResponse()
+    res.write("<p>Hello!</p>")
+    return res

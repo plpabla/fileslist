@@ -1,3 +1,4 @@
+@webbrowser_required
 Feature: Main page view
 
     Check what is displayed on the main page. What functionality I have
