@@ -1,6 +1,7 @@
 import time
 from behave import step
 from django.urls import reverse
+import logging
 
 def resolve_url(url, root=None):
     if root is None:
@@ -19,5 +20,6 @@ def my_step(context, url):
 
 @step("Page title contains '{expected_title}'")
 def my_step(context, expected_title):
+    logging.info("TODO")
     assert False, "ToDo!"
 

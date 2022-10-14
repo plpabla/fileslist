@@ -1,6 +1,7 @@
 from urllib import request
 from django.urls import reverse
-from pytest_django.asserts import assertTemplateUsed
+import logging
+# from pytest_django.asserts import assertTemplateUsed
 
 def test_root_url_resolves_to_home_page():
     page_found = reverse("home")
@@ -9,6 +10,6 @@ def test_root_url_resolves_to_home_page():
 
 def test_home_page_renders_home_template(client):
     res = client.get(reverse("home"))
-    print(f"\n*** response: {res.content.decode()}")
+    logging.info(f"\nHome page response: {res.content.decode()}")
     assert False, "ToDo!"
     
