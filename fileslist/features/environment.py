@@ -16,7 +16,7 @@ def create_browser() -> webdriver:
     # opts.add_argument("--headless")
     # context.browser.implicitly_wait(3)
     return webdriver.Firefox(options=opts)
-    
+
 
 def setup_logger() -> None:
     BASE_DIR = Path(__file__).resolve().parent
