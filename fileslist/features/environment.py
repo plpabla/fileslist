@@ -6,14 +6,16 @@ from selenium import webdriver
 from behave.model import Status
 
 TAG_WEBBROWSER_REQUIRED = "webbrowser_required"
+
+def webbrowser_required_in_scenario(scenario) -> bool:
+    return TAG_WEBBROWSER_REQUIRED in [*scenario.tags, *scenario.feature.tags]
+
+
 def create_browser() -> webdriver:
     opts = webdriver.FirefoxOptions()
     # opts.add_argument("--headless")
     # context.browser.implicitly_wait(3)
     return webdriver.Firefox(options=opts)
-
-def webbrowser_required_in_scenario(scenario) -> bool:
-    return TAG_WEBBROWSER_REQUIRED in [*scenario.tags, *scenario.feature.tags]
     
 
 def setup_logger() -> None:
