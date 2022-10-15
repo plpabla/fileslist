@@ -35,7 +35,7 @@ jobs:
     - name: Run Pytest
       run: |
         pwd
-        pytest
+        cd ..; pytest 
     - name: Run Features Tests
       run: |
         python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ env.project_name }}/features/report
