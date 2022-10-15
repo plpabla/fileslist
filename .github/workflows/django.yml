@@ -34,6 +34,7 @@ jobs:
         python ${{ env.project_name }}/manage.py test
     - name: Run Pytest
       run: |
+        pwd
         pytest
     - name: Run Features Tests
       run: |
