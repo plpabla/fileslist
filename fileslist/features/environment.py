@@ -13,7 +13,7 @@ def webbrowser_required_in_scenario(scenario) -> bool:
 
 def create_browser() -> webdriver:
     opts = webdriver.FirefoxOptions()
-    # opts.add_argument("--headless")
+    opts.add_argument("--headless")
     # context.browser.implicitly_wait(3)
     return webdriver.Firefox(options=opts)
 
@@ -46,7 +46,6 @@ def before_scenario(context, scenario):
 
 def after_scenario(context, scenario):
     if webbrowser_required_in_scenario(scenario):
-        time.sleep(3)
         context.browser.quit() 
 
     if scenario.status == Status.failed:
