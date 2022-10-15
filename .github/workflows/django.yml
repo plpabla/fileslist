@@ -31,6 +31,9 @@ jobs:
     - name: Run Django Tests
       run: |
         python ${{ env.project_name }}/manage.py test
+    - name: Run Pytest
+      run: |
+        pytest
     - name: Run Features Tests
       run: |
         python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ env.project_name }}/features/report
