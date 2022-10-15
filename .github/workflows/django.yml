@@ -17,6 +17,7 @@ jobs:
 
     env:
       project_name: fileslist
+      DJANGO_SETTINGS_MODULE: fileslist.settings
 
     steps:
     - uses: actions/checkout@v3
