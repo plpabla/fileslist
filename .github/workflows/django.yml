@@ -17,7 +17,7 @@ jobs:
 
     env:
       project_name: fileslist
-      DJANGO_SETTINGS_MODULE: fileslist.settings
+      DJANGO_SETTINGS_MODULE: settings
       PYTHONPATH: /home/runner/work/fileslist:/home/runner/work/fileslist/fileslist
     steps:
     - uses: actions/checkout@v3
