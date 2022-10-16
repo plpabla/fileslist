@@ -18,7 +18,7 @@ jobs:
     env:
       project_name: fileslist
       DJANGO_SETTINGS_MODULE: fileslist.settings
-      PYTHON_PATH: /home/runner/work/fileslist/fileslist
+      PYTHONPATH: /home/runner/work/fileslist
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
