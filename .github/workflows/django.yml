@@ -34,8 +34,9 @@ jobs:
         python ${{ env.project_name }}/manage.py test
     - name: Run Pytest
       run: |
-        pwd
-        cd ..; pytest 
+        echo PYTHONPATH=$PYTHONPATH
+        echo DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+        pytest 
     - name: Run Features Tests
       run: |
         python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ env.project_name }}/features/report
