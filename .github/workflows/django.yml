@@ -18,7 +18,7 @@ jobs:
     env:
       project_name: fileslist
       DJANGO_SETTINGS_MODULE: fileslist.settings
-
+      PYTHON_PATH: /home/runner/work/fileslist/fileslist
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
@@ -34,6 +34,7 @@ jobs:
         python ${{ env.project_name }}/manage.py test
     - name: Run Pytest
       run: |
+        pwd
         echo PYTHONPATH=$PYTHONPATH
         echo DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
         pytest 
