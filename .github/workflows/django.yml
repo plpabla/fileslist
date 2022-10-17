@@ -34,9 +34,7 @@ jobs:
     - name: Run Pytest
       working-directory: ./fileslist
       run: |
-        pwd
-        echo DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
-        pytest 
+        pytest -vv
     - name: Run Features Tests
       run: |
         python ${{ env.project_name }}/manage.py behave ${{ env.project_name }}/features --junit --junit-directory ${{ env.project_name }}/features/report
