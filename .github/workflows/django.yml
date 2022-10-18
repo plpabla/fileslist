@@ -32,7 +32,7 @@ jobs:
       run: |
         python ${{ env.project_name }}/manage.py test
     - name: Run Pytest
-      working-directory: ./fileslist
+      working-directory: ./fileslist   # This is f***** important (plus pyproject.toml)
       run: |
         pytest -vv
     - name: Run Features Tests
