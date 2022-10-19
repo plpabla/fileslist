@@ -12,7 +12,7 @@ def test_root_url_resolves_to_home_page():
 
 def test_home_page_renders_home_template(client):
     res = client.get(reverse("home"))
-    
+
     assertTemplateUsed(res, "home.html")
 
 
