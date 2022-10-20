@@ -1,10 +1,9 @@
 from django.urls import reverse
-import logging
 from pytest_django.asserts import assertTemplateUsed
 from custom_asserts import assert_title_contains
 
 
-def test_root_url_resolves_to_home_page():
+def test_home_page_resolves_to_root():
     page_found = reverse("home")
 
     assert page_found == r"/"
