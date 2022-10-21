@@ -24,6 +24,4 @@ def my_step(context, url):
 
 @step("Page title contains '{expected_title}'")
 def my_step(context, expected_title):
-    logging.info("TODO")
-    assert True
-    # assert False, "ToDo!"
+    assert expected_title in context.browser.title
