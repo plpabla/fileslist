@@ -15,7 +15,6 @@ def webbrowser_required_in_scenario(scenario) -> bool:
 def create_browser() -> webdriver:
     opts = webdriver.FirefoxOptions()
     opts.add_argument("--headless")
-    # context.browser.implicitly_wait(3)
     return webdriver.Firefox(options=opts)
 
 

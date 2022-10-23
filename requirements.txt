@@ -1,3 +1,5 @@
+allure-behave==2.11.1
+allure-python-commons==2.11.1
 asgiref==3.5.2
 async-generator==1.10
 attrs==22.1.0

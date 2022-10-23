@@ -4,7 +4,6 @@ Feature: Main page view
     Check what is displayed on the main page. What functionality I have
 
     Scenario: Main page title contains 'FilesList' string
-    Given opened browser
     When I'm on the 'home' page
     Then Page title contains 'FilesList'
 
