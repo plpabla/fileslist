@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 PROJECT_NAME = "fileslist"
-
+BASE_DIR = Path(__file__).resolve().parent
 
 def generate_unique_run_id(already_called=[False]) -> str:
     if already_called[0]:
@@ -21,7 +21,7 @@ def store_run_id_in_env(run_id: str, env_var_name: str = "RUN_ID") -> None:
 
 
 def get_allure_report_dir() -> str:
-    return os.path.join("logs", generate_unique_run_id())
+    return os.path.join(BASE_DIR.parent, PROJECT_NAME, "features", "logs", generate_unique_run_id())
 
 
 def parse_args() -> argparse.Namespace:

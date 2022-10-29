@@ -2,21 +2,18 @@ import time
 from behave import step
 from django.urls import reverse
 import logging
+from home_page import HomePage
 
 BUTTON_IDS = {"login": "id_login", "logout": "id_logut"}
 
 
-def resolve_url(url, root=None):
-    if root is None:
-        return url
-
-    full_url = root + reverse(url)
-    return full_url
-
+# PAGES = {"home": HomePage, ...}
 
 @step("I'm on the '{url}' page")
 def my_step(context, url):
-    context.browser.get(resolve_url(url, root=context.test.live_server_url))
+    # context.browser.get(resolve_url(url, root=context.test.live_server_url))
+    # TODO - it should use factory to return correct page based on url
+    context.page = HomePage(context)
 
 
 @step("Page title contains '{expected_title}'")
